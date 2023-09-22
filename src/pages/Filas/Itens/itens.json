@@ -1,0 +1,119 @@
+[
+  {
+    "title": "Inspiron 24 All in One",
+    "description": "12ª geração Intel® Core™ i7-1255U - Windows 11 Home - Intel® Iris® Xe - Memória de 16GB DDR4 - SSD de 512GB PCIe NVMe M.2",
+    "photo": "/assets/Filas/prod1.jpg",
+    "color": "preto",
+    "marca": "Dell",
+    "price": 6499.00,
+    "id": 1,
+    "category": {
+      "id": 1,
+      "label": "Computador"
+    }
+  },
+  {
+    "title": "ProDesk HP 400 G9 Mini",
+    "description": "Processador Intel® Core™ i5 da 12ª geração - Windows 10 Pro - RAM de 8 GB DDR4-3200 MHz - Placa de vídeo Intel® UHD 770",
+    "photo": "/assets/Filas/prod2.jpg",
+    "color": "preto",
+    "marca": "HP",
+    "price": 4499.00,
+    "id": 2,
+    "category": {
+      "id": 1,
+      "label": "Computador"
+    }
+  },
+  {
+    "title": "ThinkCentre neo 50s",
+    "description": "Processador Intel® Core™ de 12ª geração - Windows 11 Home -  Memória 16GB DDR4 3200MHz - 256 GB SSD - Placa de vídeo integrada",
+    "photo": "/assets/Filas/prod3.jpg",
+    "color": "preto",
+    "marca": "Lenovo",
+    "price": 5103.99,
+    "id": 3,
+    "category": {
+      "id": 1,
+      "label": "Computador"
+    }
+  },
+  {
+    "title": "Notebook Inspiron 15 3000",
+    "description": "11ª geração Intel® Core™ i7-1165G7 - Windows 11 Home - NVIDIA® GeForce® MX350 - Memória de 16GB DDR4 - SSD de 512GB PCIe NVMe M.2",
+    "photo": "/assets/Filas/not1.jpg",
+    "color": "silver",
+    "marca": "Dell",
+    "price": 4699.00,
+    "id": 4,
+    "category": {
+      "id": 2,
+      "label": "Notebook"
+    }
+  },
+  {
+    "title": "Lenovo IdeaPad Flex 5i",
+    "description": "Intel Core i7 1065G7 8GB de RAM 256GB SSD, Tela LED de 14 -Sensível ao toque.Intel UHD Graphics 1920x1080px Windows 10 Home - HD 256 SSD",
+    "photo": "/assets/Filas/not2.jpg",
+    "color": "silver",
+    "marca": "Lenovo",
+    "price": 7989.00,
+    "id": 5,
+    "category": {
+      "id": 2,
+      "label": "Notebook"
+    }
+  },
+  {
+    "title": "Smart Tank 517 1TJ10A",
+    "description": "Impressão, digitalização, cópia, Wireless - Tecnologia de impressão: Jato de Tinta Térmico HP",
+    "photo": "/assets/Filas/imp1.jpg",
+    "color": "preto",
+    "marca": "HP",
+    "price": 989.10,
+    "id": 6,
+    "category": {
+      "id": 3,
+      "label": "Impressoras"
+    }
+  },
+  {
+    "title": "Monitor Gamer Samsung 24",
+    "description": "Tamanho da Tela 24'',Tipo de Painel IPS,Curvatura da Tela Flat,Resolução 1,920 x 1,080,Proporção de Tela 16:09,Tempo de Resposta 5 ms",
+    "photo": "/assets/Filas/monitor.jpg",
+    "color": "preto",
+    "marca": "Samsung",
+    "price": 45.0,
+    "id": 7,
+    "category": {
+      "id": 4,
+      "label": "Acessorios"
+    }
+  },
+  {
+    "title": "Kit Teclado e Mouse Sem Fio",
+    "description": "Kit Teclado e Mouse Sem Fio Dell Pro, 4000 DPI, ABNT2, Preto - KM5221W",
+    "photo": "/assets/Filas/kit.jpg",
+    "color": "preto",
+    "marca": "Dell",
+    "price": 294.11,
+    "id": 8,
+    "category": {
+      "id": 4,
+      "label": "Acessorios"
+    }
+  },
+  {
+    "title": "Epson EcoTank L3250",
+    "description": "Multifuncional Epson EcoTank L3250 - Tanque de Tinta Colorida, Wi-Fi Direct, USB, Bivolt",
+    "photo": "/assets/Filas/imp2.jpg",
+    "color": "preto",
+    "marca": "Epson",
+    "price":  1144.29,
+    "id": 9,
+    "category": {
+      "id": 3,
+      "label": "Impressoras"
+    }
+  }
+]
