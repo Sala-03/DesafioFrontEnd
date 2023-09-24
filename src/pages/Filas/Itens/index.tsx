@@ -28,6 +28,14 @@ export default function Itens(props: Props) {
       {lista.map(item => (
         <Item key={item.id} {...item} />
       ))}
+      <div className={styles.inputContainer}>
+        <label>Qtd de itens:</label>
+        <input
+          type="text"
+          name="qtdItens"
+          disabled    
+        />
+      </div>
       <Botao type="submit">
         Remover
       </Botao>
