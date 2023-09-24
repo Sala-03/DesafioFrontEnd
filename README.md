@@ -21,6 +21,7 @@ Desafio da Ada Tech Java Spring Boot Aws
 
 Versões:
 <p>Node 18.18.0<h3><a href= "https://nodejs.org/en/download">Node</a></h3></p>
+<p>npm 9.8.1<h3><a href= "https://www.npmjs.com/package/npm/v/9.8.1">NPM</a></h3></p>
 
 # Releases
 
