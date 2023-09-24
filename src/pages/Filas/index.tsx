@@ -5,11 +5,13 @@ import Filtros from "./Filtros";
 
 import Itens from './Itens';
 import Formulario from "pages/Formulario";
+import { IFeedBack } from "interfaces/IFeedBack";
 
 export default function Filas() {
   const [busca, setBusca] = useState("");
   const [filtro, setFiltro] = useState<number | null>(null);
-  const [ordenador, setOrdenador] = useState("");
+  const [feeds, setFeeds] = useState<IFeedBack>();
+  
   return (
     <main>
       <nav className={styles.menu}>
@@ -26,10 +28,9 @@ export default function Filas() {
       <section className={styles.Filas}>
         <h3 className={styles.Filas__titulo}>Filas</h3>
           <div className={styles.Filas__filtros}>
-          <Filtros filtro={filtro} setFiltro={setFiltro} />
-          
+          <Filtros filtro={filtro} setFiltro={setFiltro} />          
         </div>
-        <Itens busca={busca} filtro={filtro} ordenador={ordenador} />
+        <Itens busca={busca} filtro={filtro} />
       </section>
     </main>
   )
