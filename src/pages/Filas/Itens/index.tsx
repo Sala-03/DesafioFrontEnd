@@ -11,19 +11,44 @@ interface Props {
 }
 
 export default function Itens(props: Props) {
-  const [feeds, setFeed] = useState([]);
-  const [lista, setLista] = useState(feeds);
+  const [feedsS, setFeedS] = useState([]);
+  const [feedsE, setFeedE] = useState([]);
+  const [feedsC, setFeedC] = useState([]);
+  const [lista, setLista] = useState([]);
   const [qtd, setQtd] = useState();
+  const [qtdS, setQtdS] = useState();
+  const [qtdE, setQtdE] = useState();
+  const [qtdC, setQtdC] = useState();
   const { busca, filtro } = props;
 
   useEffect(() => {
     API.get('/SUGESTOES').then((response) => {
-      setFeed(response.data);
+      setFeedS(response.data);
+      console.log('2', response.data);
+    });
+
+    API.get('/ELOGIOS').then((response) => {
+      setFeedE(response.data);
+      console.log('2', response.data);
+    });
+
+    API.get('/CRITICAS').then((response) => {
+      setFeedC(response.data);
       console.log('2', response.data);
     });
 
     API.get('/size/SUGESTOES').then((responseQtd) => {
-      setQtd(responseQtd.data);
+      setQtdS(responseQtd.data);
+      console.log('qtd:', responseQtd.data);
+    });
+
+    API.get('/size/ELOGIOS').then((responseQtd) => {
+      setQtdE(responseQtd.data);
+      console.log('qtd:', responseQtd.data);
+    });
+
+    API.get('/size/CRITICAS').then((responseQtd) => {
+      setQtdC(responseQtd.data);
       console.log('qtd:', responseQtd.data);
     });
 
@@ -46,14 +71,25 @@ export default function Itens(props: Props) {
   }
 
   useEffect(() => {
-    const novaLista = feeds.filter(item => testaFiltro(1));
-    setLista(novaLista);
+    if (props.filtro == 1){
+      setLista(feedsS);
+     // setQtd(setQtdS);
+    }
+    if (props.filtro == 2){
+      setLista(feedsE);
+      //setQtd(setQtdE);
+    }
+    if (props.filtro == 3){
+      setLista(feedsC);   
+     // setQtd(setQtdC);
+    }
+
   }, [busca, filtro])
 
   return (
     <form className={styles.novoFeedBack} onSubmit={removerFeed}>
       <div className={styles.itens}>
-        {feeds}
+        {lista}
         <div className={styles.inputContainer}>
           <label>Qtd de itens: </label>
           <input
