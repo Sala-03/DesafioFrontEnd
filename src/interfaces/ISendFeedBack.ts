@@ -1,5 +1,6 @@
 export interface ISendFeedBack{
-    typeMessage: string;
-    statusMessage: string;
+    id: string;
+    type: string;
+    status: string;
     message:string;
 }

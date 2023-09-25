@@ -4,6 +4,7 @@ import Botao from 'components/Botao';
 import style from './Formulario.module.scss';
 import { IFeedBack } from 'interfaces/IFeedBack';
 import { FeedBackServices } from 'services';
+import { API } from 'providers';
 
 
 // interface Props {
@@ -25,11 +26,22 @@ function Formulario() {
     console.log('s:', statusMessage);
     console.log('m:', mensagemFeed);
 
-    const { status, data } = await FeedBackServices.sendFeedBack(evento);
-    console.log('data:', data);
-    if (status === 201) {
-      console.log('Data', data);
-    }
+    API.post('http:/localhost:9090/enqueue', {
+      type: tipoFeed,
+      message: mensagemFeed
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+
+    // const { status, data } = await FeedBackServices.sendFeedBack(evento);
+    // console.log('data:', data);
+    // if (status === 201) {
+    //   console.log('Data', data);
+    // }
 
   }
 
