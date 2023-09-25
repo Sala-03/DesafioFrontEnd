@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
-
+import { API } from "providers"
 import Botao from 'components/Botao';
 import style from './Formulario.module.scss';
 import { IFeedBack } from 'interfaces/IFeedBack';
-import { FeedBackServices } from 'services';
 
-
-// interface Props {
-//   setFeeds: React.Dispatch<React.SetStateAction<IFeedBack[]>>
-// }
 
 function Formulario() {
   const [tipoFeed, setTypeMessage] = useState("");
@@ -19,34 +14,29 @@ function Formulario() {
 
     evento.preventDefault();
 
-    setStatusMessage("Recebido");
-
-    console.log('type:', tipoFeed);
-    console.log('s:', statusMessage);
-    console.log('m:', mensagemFeed);
-
-    const { status, data } = await FeedBackServices.sendFeedBack(evento);
-    console.log('data:', data);
-    if (status === 201) {
-      console.log('Data', data);
+    const data = {
+      type: tipoFeed,
+      message: mensagemFeed
     }
 
+    console.log('data:', data);
+
+    API.post('/enqueue', data )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   }
 
-  // async function onSubmit(values:IFeedBack) {
-  //   const{ status, data } = await FeedBackServices.sendFeedBack(values);
-  //   if(status === 201){
-  //     console.log('Data', data);
-  //   }
-
-  // }
 
   return (
     <form className={style.novoFeedBack} onSubmit={adicionarFeed}>
 
       <div className={style.inputContainer}>
         <label htmlFor="tipoFeed">
-          Tipo (Sugestão/Elogio/Crítica)
+          Tipo (SUGESTAO/ELOGIO/CRITICA)
         </label>
         <input
           type="text"
@@ -54,7 +44,7 @@ function Formulario() {
           id="tipoFeed"
           value={tipoFeed}
           onChange={evento => setTypeMessage(evento.target.value)}
-          placeholder="Tipo (Sugestão/Elogio/Crítica)"
+          placeholder="Tipo (SUGESTAO/ELOGIO/CRITICA)"
           required
         />
       </div>
