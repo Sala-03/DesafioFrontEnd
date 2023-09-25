@@ -53,10 +53,7 @@ export default function Itens(props: Props) {
   return (
     <form className={styles.novoFeedBack} onSubmit={removerFeed}>
       <div className={styles.itens}>
-        {lista.map(item => (
-          <div></div>
-          // <Item key={item.id} {...item} />
-        ))}
+        {feeds}
         <div className={styles.inputContainer}>
           <label>Qtd de itens: </label>
           <input
