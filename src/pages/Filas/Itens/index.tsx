@@ -73,15 +73,15 @@ export default function Itens(props: Props) {
   useEffect(() => {
     if (props.filtro == 1){
       setLista(feedsS);
-     // setQtd(setQtdS);
+      setQtd(qtdS);
     }
     if (props.filtro == 2){
       setLista(feedsE);
-      //setQtd(setQtdE);
+      setQtd(qtdE);
     }
     if (props.filtro == 3){
       setLista(feedsC);   
-     // setQtd(setQtdC);
+      setQtd(qtdC);
     }
 
   }, [busca, filtro])
