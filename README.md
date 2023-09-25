@@ -24,7 +24,7 @@ Versões:
 <p>npm 9.8.1<h3><a href= "https://www.npmjs.com/package/npm/v/9.8.1">NPM</a></h3></p>
 
 # Execução do projeto
-<p>Na raiz do projeto baixas as bibliotrecas executando o comando 'npm install'</p></br>
+<p>Na raiz do projeto baixar as bibliotrecas executando o comando 'npm install'</p></br>
 <p>Preencher a variável de ambiente com o endereço raíz da URL</p> </br>
 <p>após isso executar a aplicação com o comando 'npm start'</p>
 
