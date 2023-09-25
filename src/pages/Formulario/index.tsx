@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Botao from 'components/Botao';
 import style from './Formulario.module.scss';
 import { IFeedBack } from 'interfaces/IFeedBack';
-import { FeedBackServices } from 'services';
+
 import { API } from 'providers';
 
 
@@ -19,16 +19,16 @@ function Formulario() {
   async function adicionarFeed(evento: React.FormEvent<HTMLFormElement>) {
 
     evento.preventDefault();
-
-    setStatusMessage("Recebido");
-
-    console.log('type:', tipoFeed);
-    console.log('s:', statusMessage);
-    console.log('m:', mensagemFeed);
-
-    API.post('http:/localhost:9090/enqueue', {
+   
+    const data = {
       type: tipoFeed,
       message: mensagemFeed
+    }
+
+    console.log('data:', data);
+
+    API.post('/enqueue', {
+      data
     })
       .then(function (response) {
         console.log(response);
@@ -36,13 +36,6 @@ function Formulario() {
       .catch(function (error) {
         console.error(error);
       });
-
-    // const { status, data } = await FeedBackServices.sendFeedBack(evento);
-    // console.log('data:', data);
-    // if (status === 201) {
-    //   console.log('Data', data);
-    // }
-
   }
 
   // async function onSubmit(values:IFeedBack) {

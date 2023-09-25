@@ -1,5 +1,7 @@
 import axios from 'axios';
 
-const baseURL = process.env.BASE_URL;
-
-export const API = axios.create({ baseURL});
+export const API = axios.create({
+    baseURL: 'http://localhost:9090',
+   
+    headers: {'Access-Control-Allow-Origin':'*'}
+  });
