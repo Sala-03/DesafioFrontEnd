@@ -1,29 +1,31 @@
 import styles from './Item.module.scss'; 
 import feeds from '../itens.json';
 import classNames from "classnames";
+import { IFeedBack } from 'interfaces';
 
-type Props = typeof feeds[0];
-
+interface Props {
+  id: string;
+  type: string;
+  status: string;
+  message:string;
+}
 export default function Item(props: Props) {
-  const { title, description, category, color, marca, price, photo } = props;
+
+  const { id, type, status, message } = props;
+  
   return (
     <div className={styles.item}>
-      <div className={styles.item__imagem}>
-        <img src={photo} alt={title} />
-      </div>
+     
       <div className={styles.item__descricao}>
         <div className={styles.item__titulo}>
-          <h2> {title} </h2>
-          <p> {description} </p>
+          <h2> {status} </h2>
+          <p> {message} </p>
         </div>
         <div className={styles.item__tags}>
           <div className={classNames({
             [styles.item__tipo]: true,
-            [styles[`item__tipo__${category.label.toLowerCase()}`]]: true
-          })}>{category.label}</div>
-          <div className={styles.item__cor}>{color}</div>
-          <div className={styles.item__marca}>{marca} </div>
-          <div className={styles.item__valor}>R$ {price.toFixed(2)}</div>
+            [styles[`item__tipo__${type.toUpperCase()}`]]: true
+          })}>{type}</div>          
         </div>
       </div>
     </div>
