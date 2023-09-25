@@ -25,11 +25,12 @@ Versões:
 
 # Execução do projeto
 <p>Na raiz do projeto baixas as bibliotrecas executando o comando 'npm install'</p></br>
+<p>Preencher a variável de ambiente com o endereço raíz da URL</p> </br>
 <p>após isso executar a aplicação com o comando 'npm start'</p>
 
 
 
 # Releases
 
-Deverá ser publicado um release ao término de cada entrega do projeto.
+1.0
 
